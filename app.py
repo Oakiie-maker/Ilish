@@ -1,3 +1,6 @@
+
+from dotenv import load_dotenv
+load_dotenv()
 from flask import Flask, send_file
 from flask_cors import CORS
 from database import db, init_db
@@ -17,7 +20,7 @@ def create_app():
     app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL", "sqlite:///ilish.db")
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET", "ilish-jwt-2026")
-    app.config["PRINTFUL_API_KEY"] = os.getenv("PRINTFUL_API_KEY", "")
+    app.config["PRINTFUL_API_KEY"] = os.getenv("PRINTFUL_API_KEY", "1ZXtq5kS2WJl4l7n1r39tl4sFD6TEEAkd8BxHpFw")
     app.config["PRINTFUL_BASE_URL"] = "https://api.printful.com"
     app.config["PAYFAST_MERCHANT_ID"] = os.getenv("PAYFAST_MERCHANT_ID", "")
     app.config["PAYFAST_MERCHANT_KEY"] = os.getenv("PAYFAST_MERCHANT_KEY", "")
